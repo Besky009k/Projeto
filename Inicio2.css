@@ -1,0 +1,522 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    background: #000;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    width: 101%;
+    height: 10px;
+  }
+  
+  nav ul li {
+    display: grid;
+    justify-content: center;
+    color: transparent;
+    color: #63e499;
+    font-weight: 20px;
+    padding: 30px 40px;
+    border-radius: 5px;
+    transition: 1s ease;
+    font-family: sans-serif;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: transparent;
+    color: rgba(255, 255, 255, 0.61);
+    --animation-color: #63e499;
+    font-weight: 20px;
+    padding: 30px 40px;
+    border-radius: 5px;
+    transition: 1s ease;
+    font-family: sans-serif;
+    -webkit-text-stroke: 1px var(--text-stroke-color);
+  }
+  
+  nav ul li a:hover {
+    color: var(--animation-color);
+    transition: 0.5s;
+    filter: drop-shadow(0 0 23px var(--animation-color))
+  }
+  
+  /* Botão Adventure */
+  .button {
+    margin: 0;
+    height: auto;
+    background: transparent;
+    padding: 0;
+    border: none;
+    display: flex;
+    justify-content: start;
+  }
+  
+  .button {
+    --border-right: 6px;
+    --text-stroke-color: rgba(255,255,255,0.6);
+    --animation-color: #37FF8B;
+    --fs-size: 30px;
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-size: var(--fs-size);
+    font-family: "Arial";
+    position: relative;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-stroke-color);
+  }
+  
+  .hover-text {
+    position: absolute;
+    box-sizing: border-box;
+    content: attr(data-text);
+    color: var(--animation-color);
+    width: 0%;
+    inset: 0;
+    border-right: var(--border-right) solid var(--animation-color);
+    overflow: hidden;
+    transition: 0.5s;
+    -webkit-text-stroke: 1px var(--animation-color);
+  }
+  
+  .button:hover .hover-text {
+    width: 100%;
+    filter: drop-shadow(0 0 23px var(--animation-color))
+  }
+  
+  a {
+      text-decoration: none;
+  }
+  /* Botão Ler Mais */
+  .btn {
+   --glow-color: rgba(255, 255, 255, 0.623);
+   --glow-spread-color: rgba(255, 255, 255, 0.644);
+   --enhanced-glow-color: rgba(255, 255, 255, 0.445);
+   --btn-color: rgba(255, 255, 255, 0.438);
+   border: .25em solid var(--glow-color);
+   padding: 1em 3em;
+   color: var(--glow-color);
+   font-size: 15px;
+   font-weight: bold;
+   background-color: var(--btn-color);
+   border-radius: 1em;
+   outline: none;
+   box-shadow: 0 0 1em .25em var(--glow-color),
+          0 0 4em 1em var(--glow-spread-color),
+          inset 0 0 .75em .25em var(--glow-color);
+   text-shadow: 0 0 .5em var(--glow-color);
+   position: relative;
+   transition: all 0.3s;
+   cursor: pointer;
+  }
+  
+  .btn::after {
+   pointer-events: none;
+   content: "";
+   position: absolute;
+   top: 120%;
+   left: 0;
+   height: 100%;
+   width: 100%;
+   background-color: var(--glow-spread-color);
+   filter: blur(2em);
+   opacity: .7;
+   transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+  }
+  
+  .btn:hover {
+   color: var(--btn-color);
+   background-color: var(--glow-color);
+   box-shadow: 0 0 1em .25em var(--glow-color),
+          0 0 4em 2em var(--glow-spread-color),
+          inset 0 0 .75em .25em var(--glow-color);
+  }
+  
+  .btn:active {
+   box-shadow: 0 0 0.6em .25em var(--glow-color),
+          0 0 2.5em 2em var(--glow-spread-color),
+          inset 0 0 .5em .25em var(--glow-color);
+  }
+    .bg{
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1802%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='url(%26quot%3b%23SvgjsRadialGradient1803%26quot%3b)'%3e%3c/rect%3e%3cpath d='M0 0L473.28 0L0 100.21z' fill='rgba(255%2c 255%2c 255%2c .1)'%3e%3c/path%3e%3cpath d='M0 100.21L473.28 0L566.1899999999999 0L0 180.39999999999998z' fill='rgba(255%2c 255%2c 255%2c .075)'%3e%3c/path%3e%3cpath d='M0 180.39999999999998L566.1899999999999 0L1078.65 0L0 333z' fill='rgba(255%2c 255%2c 255%2c .05)'%3e%3c/path%3e%3cpath d='M0 333L1078.65 0L1256.3000000000002 0L0 348.6z' fill='rgba(255%2c 255%2c 255%2c .025)'%3e%3c/path%3e%3cpath d='M1440 560L1197.93 560L1440 436.11z' fill='rgba(0%2c 0%2c 0%2c .1)'%3e%3c/path%3e%3cpath d='M1440 436.11L1197.93 560L761.82 560L1440 299.19000000000005z' fill='rgba(0%2c 0%2c 0%2c .075)'%3e%3c/path%3e%3cpath d='M1440 299.19L761.8199999999999 560L300.91999999999996 560L1440 261.35z' fill='rgba(0%2c 0%2c 0%2c .05)'%3e%3c/path%3e%3cpath d='M1440 261.35L300.9200000000001 560L262.4100000000001 560L1440 83.92000000000002z' fill='rgba(0%2c 0%2c 0%2c .025)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1802'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cradialGradient cx='0%25' cy='0%25' r='1545.06' gradientUnits='userSpaceOnUse' id='SvgjsRadialGradient1803'%3e%3cstop stop-color='rgba(0%2c 0%2c 0%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(9%2c 13%2c 7%2c 1)' offset='1'%3e%3c/stop%3e%3c/radialGradient%3e%3c/defs%3e%3c/svg%3e");    background-size: cover;
+        background-repeat: no-repeat;
+        position: absolute;
+        width: 105vw;
+        height: 100%;
+        z-index: -1;
+    }
+  
+    p {
+      color: #000;
+      font-size: 20px;
+    }
+  
+    strong {
+      color: red;
+    }
+  
+    i {
+      color: #bdf1c4;
+    }
+  
+  
+    /* Card Lich */
+    .card-Container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 9em;
+    }
+    .lichCard {
+      background-color: transparent;
+      width: 20em;
+      height: 25em;
+      perspective: 1000px;
+      margin-right: 10em;
+    }
+    
+    .innerCard {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+      cursor: pointer;
+    }
+    
+    .lichCard:hover .innerCard {
+      transform: rotateY(180deg);
+    }
+    
+    .frontSide,
+    .backSide {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 1rem;
+      color: white;
+      box-shadow: 0 0 0.3em rgba(255, 255, 255, 0.5);
+      font-weight: 700;
+    }
+    .frontSide,
+    .frontSide::before {
+      background-image: url('LichCard.png');
+    }
+    
+    .backSide,
+    .backSide::before {
+      background-image: linear-gradient(160deg, #243326 0%, #b2fabe 100%);
+    }
+    
+    .backSide {
+      transform: rotateY(180deg);
+    }
+    
+    .frontSide::before,
+    .backSide::before {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      content: '';
+      width: 110%;
+      height: 110%;
+      position: absolute;
+      z-index: -1;
+      border-radius: 1em;
+      filter: blur(4em);
+      animation: animate 5s linear infinite;
+    }
+  
+  /* Card Finn */
+  
+      .finnCard i {
+        color: #bdcff1;
+      }
+      .finnCard strong {
+        color: white
+      }
+  
+    .finnCard {
+      background-color: transparent;
+      width: 20em;
+      height: 25em;
+      perspective: 1000px;
+      margin-right: 10em;
+    }
+  
+    .innerCard2 {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+      cursor: pointer;
+    }
+    
+    .finnCard:hover .innerCard2 {
+      transform: rotateY(180deg);
+    }
+    
+    .frontSide2,
+    .backSide2 {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 1rem;
+      color: white;
+      box-shadow: 0 0 0.3em rgba(255, 255, 255, 0.5);
+      font-weight: 700;
+    }
+    .frontSide2,
+    .frontSide2::before {
+      background-image: url('FinnCard.png');
+      background-repeat: no-repeat;
+      background-position: 3em;
+      background-size: 22em;
+      
+    }
+    
+    .backSide2,
+    .backSide2::before {
+      background-image: linear-gradient(160deg, #242c33 0%, #b2d5fa 100%);
+    }
+    
+    .backSide2 {
+      transform: rotateY(180deg);
+    }
+    
+    .frontSide2::before,
+    .backSide2::before {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      content: '';
+      width: 110%;
+      height: 110%;
+      position: absolute;
+      z-index: -1;
+      border-radius: 1em;
+      filter: blur(4em);
+      animation: animate 5s linear infinite;
+    }
+  
+  /* Card Rei Gelado */
+  
+    .simonCard i {
+      color: #8c8fe4;
+    }
+    .simonCard strong {
+      color: rgb(47, 47, 128)
+    }
+  
+    .simonCard {
+      background-color: transparent;
+      width: 20em;
+      height: 25em;
+      perspective: 1000px;
+      margin-right: 10em;
+    }
+    
+    .innerCard3 {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+      cursor: pointer;
+    }
+    
+    .simonCard:hover .innerCard3 {
+      transform: rotateY(180deg);
+    }
+    
+    .frontSide3,
+    .backSide3 {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 1rem;
+      color: white;
+      box-shadow: 0 0 0.3em rgba(255, 255, 255, 0.5);
+      font-weight: 700;
+    }
+    .frontSide3,
+    .frontSide3::before {
+      background-image: url('SimonCard.png');
+      background-repeat: no-repeat;
+      background-position: 6em;
+      background-size: 18em;
+    }
+    
+    .backSide3,
+    .backSide3::before {
+      background-image: linear-gradient(160deg, #242533 0%, #b2b4fa 100%);
+    }
+    
+    .backSide3 {
+      transform: rotateY(180deg);
+    }
+    
+    .frontSide3::before,
+    .backSide3::before {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      content: '';
+      width: 110%;
+      height: 110%;
+      position: absolute;
+      z-index: -1;
+      border-radius: 1em;
+      filter: blur(4em);
+      animation: animate 5s linear infinite;
+    }
+    
+    @keyframes animate {
+      0% {
+        opacity: 0.3;
+      }
+    
+      80% {
+        opacity: 1;
+      }
+    
+      100% {
+        opacity: 0.3;
+      }
+    }
+  
+    /*Cadastro*/
+    .login-box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 400px;
+      padding: 40px;
+      transform: translate(-50%, -50%);
+      background: rgba(24, 20, 20, 0.987);
+      box-sizing: border-box;
+      box-shadow: 0 15px 25px rgba(0,0,0,.6);
+      border-radius: 10px;
+    }
+    
+    .login-box .user-box {
+      position: relative;
+    }
+    
+    .login-box .user-box input {
+      width: 100%;
+      padding: 10px 0;
+      font-size: 16px;
+      color: #fff;
+      margin-bottom: 30px;
+      border: none;
+      border-bottom: 1px solid #fff;
+      outline: none;
+      background: transparent;
+    }
+    
+    .login-box .user-box label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 10px 0;
+      font-size: 16px;
+      color: #fff;
+      pointer-events: none;
+      transition: .5s;
+    }
+    
+    .login-box .user-box input:focus ~ label,
+    .login-box .user-box input:valid ~ label {
+      top: -20px;
+      left: 0;
+      color: #bdb8b8;
+      font-size: 12px;
+    }
+    
+    .login-box form #confirmar {
+      position: relative;
+      display: inline-block;
+      padding: 10px 20px;
+      color: #ffffff;
+      font-size: 16px;
+      text-decoration: none;
+      text-transform: uppercase;
+      overflow: hidden;
+      transition: .5s;
+      margin-top: 40px;
+      letter-spacing: 4px
+    }
+    
+    .login-box a:hover {
+      background: #03f40f;
+      color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 5px #03f40f,
+                  0 0 25px #03f40f,
+                  0 0 50px #03f40f,
+                  0 0 100px #03f40f;
+    }
+    
+    .login-box #confirmar span {
+      position: absolute;
+      display: block;
+    }
+    
+    @keyframes btn-anim1 {
+      0% {
+        left: -100%;
+      }
+    
+      50%,100% {
+        left: 100%;
+      }
+    }
+    
+    .login-box #confirmar span:nth-child(1) {
+      bottom: 2px;
+      left: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #03f40f);
+      animation: btn-anim1 2s linear infinite;
+    }
